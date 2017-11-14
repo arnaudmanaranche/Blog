@@ -1,14 +1,13 @@
-<p>
-	<strong>Commenter:</strong>
-	<%= comment.commenter %>
-</p>
-<p>
-	<strong>Comment:</strong>
-  	<%= comment.body %>
-</p>
-<p>
-	<%= link_to 'Destroy comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
-<p>
-	<%= link_to 'Edit comment', edit_article_comment_path(comment) %>
-</p>
+<div class="list-group">
+  	<div class="list-group-item active">
+    	<h4 class="list-group-item-heading">By <%= comment.commenter %></h4>
+    	<p style="margin-bottom: 30px;" class="list-group-item-text text-justify"><%= comment.body %></p>
+
+    	<%= link_to([comment.article, comment], method: :delete, data: { confirm: 'Are you sure ?' }, :class => 'button-href') do %>
+            <button class="btn btn-default">Destroy</button> 
+        <% end %>
+        <%= link_to(edit_article_comment_path(comment), :class => 'button-href') do %>
+            <button class="btn btn-default">Edit</button> 
+        <% end %>
+  	</div>
+</div>

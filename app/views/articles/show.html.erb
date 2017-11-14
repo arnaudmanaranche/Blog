@@ -1,20 +1,9 @@
-<p>
-  <strong>Title:</strong>
-  <%= link_to(article_path(@article)) do %>
-  	<h2><%= @article.title %></h2>
-  <% end %>
-</p>
-   
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<h1 class="text-center text-uppercase text-primary"><%= @article.title %></h1>
+<%= image_tag(@article.url, :alt => "rss feed", :class => 'img-responsive') %>
+<p class="text-justify" style="padding: 15px 0;"><%= @article.text %></p>
 
-<h2>Comments</h2>
+<h4 class="text-muted">List comment</h4>
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form_new/' %>  
-   
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<h4 class="text-muted">Add comment</h4>
+<%= render 'comments/form_new/' %>
