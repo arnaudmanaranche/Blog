@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :contact_name, :required => true %>
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :contact_name, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
     <%= form.email_field :email, id: :contact_email, :required => true %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :contact_content, :required => true %>
   </div>
 
   <div class="actions">
