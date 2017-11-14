@@ -32,3 +32,8 @@
 textarea {
    resize: none;
 }
+
+.button-href {
+	text-decoration: none;
+	&:hover { text-decoration: none; }
+}
