@@ -1,3 +1,35 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+.container-home {
+    background-image: url('http://hdqwalls.com/wallpapers/fortnite-g5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    
+        h1 {
+            line-height: 200px;
+            font-size: 60px;
+            color: #fff;
+            font-family: 'Luckiest Guy', cursive;
+        }
+}
+
+.div-container {
+    p {
+        padding-top: 20px;
+        text-align: justify;
+    }
+    
+    .link-to-article {
+        text-align: center;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 30px;
+        color: #000;
+    }
+}
