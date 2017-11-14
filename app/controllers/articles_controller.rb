@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
     def index
         @page_title = "Liste des articles sur Forknite"
         @articles = Article.all
-        @articles = Article.all.paginate(page: params[:page], per_page: 1)
+        @articles = Article.all.paginate(page: params[:page], per_page: 3)
     end
     def destroy
             @article = Article.find(params[:id])
