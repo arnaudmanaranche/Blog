@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :contacts
   get 'welcome/index'
-  get '/contact' => 'contact#index'   
 
   resources :articles
 
