@@ -3,28 +3,26 @@
 <%= form_for :article, url: articles_path do |f| %>
     <% if @article.errors.any? %>
         <div id="error_explanation">
-            <h2>
-                <%= pluralize(@article.errors.count, "error") %> prohibited
-                    this article from being saved:
-            </h2>
-            <ul>
-                <% @article.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
+            <% @article.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger">
+                <strong>Attention !</strong> <%= msg %>
+            </div>
+            <% end %>
         </div>
     <% end %>
-    <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.label :text %>
-        <%= f.text_area :text %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>    
+    <form>
+        <div class="form-group">
+            <%= f.label :title, 'Your Title'  %>
+            <%= f.text_field :title, :class => 'form-control', :placeholder => 'My Title', :required => true %>
+        </div>
+        <div class="form-group">
+            <%= f.label :url, 'Your Image' %>
+            <%= f.url_field :url, :class => 'form-control', :required => true %>
+        </div>
+        <div class="form-group">
+            <%= f.label :text, 'Your Text' %>
+            <%= f.text_area :text, :class => 'form-control', :rows => '3', :required => true %>
+        </div>
+        <%= f.submit :class => 'btn btn-primary' %>
+    </form>
 <% end %>
-
-<%= link_to 'Back', articles_path %>
