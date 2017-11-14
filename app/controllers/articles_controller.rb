@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
     
     def new
+        @page_title = "Écrire un nouvel article"
         @article = Article.new
         render layout: "admin"
     end
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
         end
     end
     def index
+        @page_title = "Liste des articles sur Forknite"
         @articles = Article.all
         @articles = Article.all.paginate(page: params[:page], per_page: 1)
     end
@@ -37,6 +39,7 @@ class ArticlesController < ApplicationController
             redirect_to articles_path
     end
     def show
+        @page_title = 'Article sur Forknite'
         @article = Article.find(params[:id])
     end
     private

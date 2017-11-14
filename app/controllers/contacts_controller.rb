@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
       # @contacts = Contact.all
+      @page_title = "Nous contacter"
       @contact = Contact.new
   end
 
