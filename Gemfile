@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap-sass'
 
+gem 'font-awesome-rails'
+
 gem 'jquery-rails'
 
 gem 'will_paginate-bootstrap'

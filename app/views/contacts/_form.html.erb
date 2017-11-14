@@ -11,17 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :contact_name, :required => true %>
+  <div class="form-group">
+      <%= form.text_field :name, id: :contact_name, :class => 'form-control', :placeholder => 'Your name', :required => true %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email, id: :contact_email, :required => true %>
+  <div class="form-group">
+    <%= form.email_field :email, id: :contact_email, :class => 'form-control', :placeholder => 'Your e-mail', :required => true%>
+  </div>
+  
+  <div class="form-group">
+    <%= form.text_area :content, id: :contact_content, :class => 'form-control', :placeholder => 'Your message', :required => true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary', :value => 'Send your message' %>
   </div>
 <% end %>
