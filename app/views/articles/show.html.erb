@@ -1,5 +1,5 @@
 <h1 class="text-center text-uppercase text-primary"><%= @article.title %></h1>
-<%= image_tag(@article.url, :alt => "rss feed", :class => 'img-responsive') %>
+<%= image_tag(@article.url, :alt => @article.url, :class => 'img-responsive text-center') %>
 <p class="text-justify" style="padding: 15px 0;"><%= @article.text %></p>
 
 <h4 class="text-muted">List comment</h4>
