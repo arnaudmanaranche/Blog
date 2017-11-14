@@ -1,5 +1,8 @@
 class ContactsController < ApplicationController
+    
     before_action :set_contact, only: [:show, :edit, :update, :destroy]
+    
+    http_basic_authenticate_with name: "admin", password: "admin", except: [:index]
 
   # GET /contacts
   # GET /contacts.json

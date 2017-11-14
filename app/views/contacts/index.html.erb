@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] %>
+    <div class="alert alert-success">        
+        <%= notice %>
+    </div>
+<% end %>
 
 <h1>Nous contacter</h1>
-
+<br />
 <%= render 'form', contact: @contact %>
