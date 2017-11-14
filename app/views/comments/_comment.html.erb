@@ -6,7 +6,7 @@
     	<%= link_to([comment.article, comment], method: :delete, data: { confirm: 'Are you sure ?' }, :class => 'button-href') do %>
             <button class="btn btn-default">Destroy</button> 
         <% end %>
-        <%= link_to(edit_article_comment_path(comment), :class => 'button-href') do %>
+        <%= link_to(edit_article_comment_path(comment.article, comment), :class => 'button-href') do %>
             <button class="btn btn-default">Edit</button> 
         <% end %>
   	</div>

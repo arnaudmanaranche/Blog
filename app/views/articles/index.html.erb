@@ -25,13 +25,13 @@
             <th scope="row"><%= article.id %></th>
             <td><%= article.title %></td>
             <td>
-                <%= link_to(article_path(article)) do %>
+                <%= link_to(article_path(article), :class => 'button-href') do %>
                     <button class="sho btn btn-success">Show</button> 
                 <% end %>
-                <%= link_to(edit_article_path(article)) do %>
+                <%= link_to(edit_article_path(article), :class => 'button-href') do %>
                     <button class="sho btn btn-info">Edit</button> 
                 <% end %>
-                <%= link_to(article_path(article), method: :delete, data: { confirm: 'Are you sure ?' }) do %>
+                <%= link_to(article_path(article), method: :delete, data: { confirm: 'Are you sure ?' }, :class => 'button-href') do %>
                     <button class="sho btn btn-danger">Destroy</button> 
                 <% end %>
             </td>
