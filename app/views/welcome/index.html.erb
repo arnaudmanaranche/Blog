@@ -1,10 +1,33 @@
-<div class="container-home">
-    <h1>Forknite</h1>
+<div class="row">
+    <div class="jumbotron">
+        <h1 class="display-1">Welcome on Rubyblognonaise 🍝</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <%= link_to(articles_path, :class => 'button-href') do %>
+                <button class="btn btn-primary">Discover all articles</button> 
+                <% end %>
+        </p>
+    </div>
 </div>
 
-<div class="div-container">
-    <p>
-        Fortnite Battle Royale est le mode JcJ à 100 joueurs de Fortnite, jouable totalement gratuitement. Une carte géante. Un bus de combat. Tout le système de construction de Fortnite, combiné à des batailles ultraintenses en JcJ. Le dernier survivant est le vainqueur. Disponible sur PC, PlayStation 4, Xbox One et Mac.
-    </p>
-    <p class="link-to-article"><%= link_to 'Voir les articles', articles_path %></p>
+<div class="row">
+    <h2>Latest posts</h2>
+    <hr class="my-2">
+    <% if @articles.each do |article| %>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><%= article.title %></h4>
+                    <img src="<%= article.url %>"  width="400"/>
+                    <p class="card-text"><%= truncate(article.text, length: 200) %></p>
+                    <%= link_to(article_path(article), :class => 'button-href') do %>
+                        <button class="sho btn btn-success">READ MORE</button> 
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    <% end.empty? %>
+        <small class="text-muted">No articles</small>
+        <% end %>
 </div>

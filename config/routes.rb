@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin' => "admin#index"
+
   get "about" => "about#index"
 
   resources :contacts

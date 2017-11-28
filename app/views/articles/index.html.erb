@@ -1,45 +1,18 @@
-<% if flash[:notice] %>
-<div class="alert alert-success">
-  <strong>Success !</strong> <%= notice %>
+<h1>All articles</h1>
+<hr class="my-2">
+<% if @articles.each do |article| %>
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><%= article.title %></h4>
+            <img src="<%= article.url %>"  width="400"/>
+            <p class="card-text"><%= truncate(article.text, length: 200) %></p>
+            <%= link_to(article_path(article), :class => 'button-href') do %>
+                <button class="sho btn btn-success">READ MORE</button> 
+            <% end %>
+        </div>
+    </div>
 </div>
+<% end.empty? %>
+    <small class="text-muted">No articles</small>
 <% end %>
-
-
-<%= link_to(new_article_path, :class => 'button-href') do %>
-    <button class="sho btn btn-info">New Article</button> 
-<% end %>
-
-<h1>Listing articles</h1>
-
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% if @articles.each do |article| %>
-        <tr>
-            <th scope="row"><%= article.id %></th>
-            <td><%= article.title %></td>
-            <td>
-                <%= link_to(article_path(article), :class => 'button-href') do %>
-                    <button class="sho btn btn-success">Show</button> 
-                <% end %>
-                <%= link_to(edit_article_path(article), :class => 'button-href') do %>
-                    <button class="sho btn btn-info">Edit</button> 
-                <% end %>
-                <%= link_to(article_path(article), method: :delete, data: { confirm: 'Are you sure ?' }, :class => 'button-href') do %>
-                    <button class="sho btn btn-danger">Destroy</button> 
-                <% end %>
-            </td>
-        </tr>
-        <% end.empty? %>
-           <small class="text-muted">No articles</small>
-        <% end %>
-  </tbody>
-</table>
-
-<%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
