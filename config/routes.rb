@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'admin' => "admin#index"
 
   get "about" => "about#index"
+  
+  get 'search', to: 'search#index', as: :search
 
   resources :contacts
   get 'welcome/index'
