@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
     def index
+        @page_title = "Rechercher un article"
         @articles = Article.search(params[:term])
     end
  

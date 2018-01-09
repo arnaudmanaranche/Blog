@@ -28,7 +28,7 @@ class AdminController < ApplicationController
         end
     end
     def index
-        @page_title = "Liste des articles sur Forknite"
+        @page_title = "Liste des articles"
         @articles = Article.all
         @articles = Article.all.paginate(page: params[:page], per_page: 3)
     end
@@ -39,7 +39,7 @@ class AdminController < ApplicationController
             redirect_to articles_path
     end
     def show
-        @page_title = 'Article sur Forknite'
+        @page_title = 'Article'
         @article = Article.find(params[:id])
     end
     private

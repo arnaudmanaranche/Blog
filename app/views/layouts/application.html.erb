@@ -4,7 +4,7 @@
       <%= csrf_meta_tags %>
       <title><%= @page_title || @page_title_2 %></title>
       <meta name="description" content="<%= @meta_description %>" />
-      <link rel="icon" type="image/png" href="../../assets/images/favicon.png" />
+      <%= favicon_link_tag 'favicon.ico' %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
