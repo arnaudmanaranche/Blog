@@ -13,31 +13,34 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require cookies_eu
  */
- 
- @import "bootstrap";
 
-.social {
-	@include scale(0.8);
-	@include transition(transform 0.3s ease 0s);
+ @import "cookies_eu";
+//  @import "bootstrap";
+ @import "bulma";
 
-	&:hover { @include scale(1); }
- }
- 
-#social-fb:hover { color: #3B5998; }
-#social-tw:hover { color: #4099FF; }
-#social-gp:hover { color: #d34836; }
-#social-em:hover { color: #f39c12; }
+// .social {
+// 	@include scale(0.8);
+// 	@include transition(transform 0.3s ease 0s);
 
-textarea {
-   resize: none;
-}
+// 	&:hover { @include scale(1); }
+//  }
 
-.button-href {
-	text-decoration: none;
-	&:hover { text-decoration: none; }
-}
+// #social-fb:hover { color: #3B5998; }
+// #social-tw:hover { color: #4099FF; }
+// #social-gp:hover { color: #d34836; }
+// #social-em:hover { color: #f39c12; }
 
-table td, table th {
-	vertical-align: middle!important; 
-}
+// textarea {
+//    resize: none;
+// }
+
+// .button-href {
+// 	text-decoration: none;
+// 	&:hover { text-decoration: none; }
+// }
+
+// table td, table th {
+// 	vertical-align: middle!important;
+// }

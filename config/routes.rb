@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'admin' => "admin#index"
+  # get 'admin' => "admin#index"
 
   get "about" => "about#index"
-  
+
   get 'search', to: 'search#index', as: :search
+
+  Rails.application.routes.draw do
+  devise_for :models
+    mount_for_simple_admin
+  end
 
   resources :contacts
   get 'welcome/index'

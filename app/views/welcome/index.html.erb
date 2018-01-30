@@ -1,28 +1,16 @@
-<div class="row">
-    <div class="jumbotron">
-        <h1 class="display-1">Welcome on Rubyblognonaise 🍝</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        <hr class="my-4">
-        <p class="lead">
-            <%= link_to(articles_path, :class => 'button-href') do %>
-                <button class="btn btn-primary">Discover all articles</button> 
-                <% end %>
-        </p>
+<div class="columns is-desktop">
+    <div class="column">
+        <h2>Latest posts</h2>
     </div>
-</div>
-
-<div class="row">
-    <h2>Latest posts</h2>
-    <hr class="my-2">
     <% if @articles.each do |article| %>
-        <div class="col-sm-6">
+        <div class="column">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"><%= article.title %></h4>
                     <img src="<%= article.url %>"  width="400"/>
                     <p class="card-text"><%= truncate(article.text, length: 200) %></p>
                     <%= link_to(article_path(article), :class => 'button-href') do %>
-                        <button class="sho btn btn-success">READ MORE</button> 
+                        <button class="sho btn btn-success">READ MORE</button>
                     <% end %>
                 </div>
             </div>

@@ -10,6 +10,8 @@ class ContactsController < ApplicationController
       # @contacts = Contact.all
       @page_title = "Nous contacter"
       @contact = Contact.new
+      @session = session[:user]
+      
   end
 
   # GET /contacts/1

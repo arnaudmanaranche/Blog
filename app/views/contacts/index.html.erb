@@ -4,6 +4,10 @@
     </div>
 <% end %>
 
+<p>
+Session : <%= @session.inspect %>
+</p>
+
 <h1>Nous contacter</h1>
 <br />
 <%= render 'form', contact: @contact %>
